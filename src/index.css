@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg: 255 255 255;
+  --color-elements: 248 248 248;
+  --color-box: 255 255 255;
+  --box-border: 229 231 235;
+  --box-sd: 226 232 240 / 0.5;
+  --heading-1: 15 23 42;
+  --heading-2: 30 41 59;
+  --heading-3: 71 85 105;
+  --text-primary: 51 65 85;
+  --text-secondary: 100 116 139;
+  --text-description: 71 85 105; 
+  --accent-primary: 220 38 38;
+  --accent-secondary: 185 28 28;
+  --genre-bg: 0 0 0; 
+  --genre-text: 255 255 255; 
+  --button-bg: 0 0 0;
+  --button-text: 255 255 255; 
+
+  --breakpoint-xs: 25rem;
+}
+
+html.dark {
+  --color-bg: 0 0 0;
+  --color-elements: 23 23 23;
+  --color-box: 38 38 38;
+  --box-border: 64 64 64;
+  --box-sd: transparent;
+  --heading-1: 255 255 255;
+  --heading-2: 245 245 245;
+  --heading-3: 229 229 229;
+  --text-primary: 212 212 212;
+  --text-secondary: 163 163 163;
+  --text-description: 212 212 212; 
+  --accent-primary: 220 38 38;
+  --accent-secondary: 248 113 113;
+  --genre-bg: 255 255 255;
+  --genre-text: 0 0 0; 
+  --button-bg: 255 255 255; 
+  --button-text: 0 0 0; 
+}
+
+@layer utilities {
+  .bg-body {
+    background-color: rgb(var(--color-bg));
+  }
+  .bg-elements {
+    background-color: rgb(var(--color-elements));
+  }
+  .bg-box {
+    background-color: rgb(var(--color-box));
+  }
+  .border-box {
+    border-color: rgb(var(--box-border));
+  }
+  .shadow-box {
+    box-shadow: 0 1px 3px 0 rgb(var(--box-sd));
+  }
+  .text-heading-1 {
+    color: rgb(var(--heading-1));
+  }
+  .text-heading-2 {
+    color: rgb(var(--heading-2));
+  }
+  .text-heading-3 {
+    color: rgb(var(--heading-3));
+  }
+  .text-primary {
+    color: rgb(var(--text-primary));
+  }
+  .text-secondary {
+    color: rgb(var(--text-secondary));
+  }
+  .text-description {
+    color: rgb(var(--text-description));
+  }
+  .bg-accent {
+    background-color: rgb(var(--accent-primary));
+  }
+  .text-accent {
+    color: rgb(var(--accent-primary));
+  }
+  .border-accent {
+    border-color: rgb(var(--accent-primary));
+  }
+  .bg-genre {
+    background-color: rgb(var(--genre-bg));
+  }
+  .text-genre {
+    color: rgb(var(--genre-text));
+  }
+  .bg-button {
+    background-color: rgb(var(--button-bg));
+  }
+  .text-button {
+    color: rgb(var(--button-text));
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.2s ease-out;
+}
